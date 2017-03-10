@@ -1,0 +1,107 @@
+#cssmenu {
+  width: auto;
+}
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  padding: 0;
+  margin: 0;
+  font-size:15px;
+  -webkit-transition: all ease .3s;
+  -o-transition: all ease .3s;
+  -moz-transition: all ease .3s;*/
+  -ms-transition: all ease .3s;
+  transition: all ease .3s;
+}
+cssmenu:before,
+#cssmenu:after,
+#cssmenu > ul:before,
+#cssmenu > ul:after {
+  content: '';
+  display: table;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  clear: both;
+}
+#cssmenu a {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+}
+#cssmenu ul > li {
+  float: left;
+  list-style: none;
+  
+}
+
+#cssmenu ul > li > a {
+padding:0 10px 0 10px;
+  display: block;
+  text-decoration: none;
+  position: relative;
+} 
+a:hover{
+  color:black;
+}
+#cssmenu ul>li:hover{
+
+  background: #ffe;
+  -webkit-box-shadow: inset 0 0 1px #1e2e4f;
+  -o-box-shadow: inset 0 0 1px #1e2e4f;
+  -moz-box-shadow: inset 0 0 1px #1e2e4f;
+  -ms-box-shadow: inset 0 0 1px #1e2e4f;
+  box-shadow: inset 0 0 1px #1e2e4f;
+  -webkit-transition: all ease .3s;
+  -o-transition: all ease .3s;
+  -moz-transition: all ease .3s;
+  -ms-transition: all ease .3s;
+  transition: all ease .3s;
+}
+
+#cssmenu > ul > li > ul {
+  opacity:0;
+  visibility: hidden;
+  position: absolute;
+    -webkit-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -o-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -ms-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+#cssmenu > ul > li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  border-radius: 0 0 3px 3px;
+}
+#cssmenu > ul > li > ul {
+  
+  position: absolute;
+  width:150px;
+  top:70px;
+  background:rgba(0, 30, 40, 0.6);
+}
+#cssmenu > ul > li > ul > li {
+  font-size:15px;
+  float: none;
+  position: relative;
+  line-height:40px;
+}
+#cssmenu > ul > li > ul > li > ul {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+#cssmenu > ul > li > ul > li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+}
+#cssmenu > ul > li > ul > li > ul {
+  left: 120px;
+  top: 1px;
+  width: 120px;
+}
+#cssmenu > ul > li > ul > li > ul > li {
+  float: none;
+}

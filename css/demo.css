@@ -1,0 +1,53 @@
+
+
+
+/* CSS reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+html,body {
+	margin:0;
+	padding:0;
+	height: 100%;
+}
+
+.topbar  header{
+	position: relative;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.topbar  header h1{
+    position:absolute;
+	margin-left: 35%;
+	padding:5px 50px 2px;
+	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+	font-size: 50px;
+	box-align:center;
+	font-weight: 400;
+	color:rgba(220,250,260,0.9);
+	text-shadow: 2px 2px 1px rgba(0,0,0,1);
+}
+/* Header Style */
+.topbar{
+	position:relative;
+	line-height: 70px;
+	font-size: 11px;
+	top:0;
+	width:100%;
+	background: rgba(0, 0, 0, 1);
+	text-transform: uppercase;
+	z-index: 999;
+	position: fixed;
+	box-shadow: 0px 1px 3px rgba(0,0,0,.9);
+}
+.topbar span.right{
+	float: right;
+	}
+.topbar span.right a{
+	float: left;
+	display: block;
+}
+
+
+

@@ -1,0 +1,16 @@
+#content{
+	color:white;
+	background-color:cyan;
+	text-align: center;
+	padding: 10px;
+	margin:30px;
+
+
+}
+#do{
+	color:solid-black;  /*this wont change the color of the text bcoz the text is an "href"*/
+	background-color:lightblue;
+	padding: 10px;
+	margin:30px;
+}
+
