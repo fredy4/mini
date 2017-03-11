@@ -73,7 +73,7 @@ print "<td>" . $row['name'] . "</td>";
 print "<td>" . $row['type'] .  "</td>"; 
 print "<td>" . $row['cost'] . "</td>";
 print "<td>" . $row['no'] . "</td>";
-print "<td>"."<a href='test.php?q=".$row['id']."'>Place Order</a>"."</td>";
+print "<td>"."<a href='pay.php?q=".$row['id']."'>Place Order</a>"."</td>";
 
 
 print "</tr>"; 
