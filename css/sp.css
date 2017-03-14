@@ -1,0 +1,19 @@
+.alert {
+    padding: 20px;
+    font-size: 20px;
+    background-color: green;
+    color: white;
+}
+body
+{ margin-top:100px;
+  background-color:linen;
+  background-image:url("/project/images/bgs.jpg");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+body, html {
+    height: 100%;
+    margin: 0;
+}
