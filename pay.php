@@ -5,6 +5,9 @@
 
 </head>
 <body>
+<?php echo "Hi, ".$_SESSION["name"];?>
+<li> <a href="logout.php">Log out</a></li>
+
 	<?php
 $dbhost = 'localhost:8080';
 $dbuser = 'root';
@@ -35,12 +38,27 @@ print "<td>" . $row['name'] . "</td>";
 print "<td>" . $row['type'] .  "</td>"; 
 print "<td>" . $row['cost'] . "</td>";
 print "<td>" . $row['no'] . "</td>";
-
-
 print "</tr>"; 
 } 
 print "</table>"; 
-?>
 
-</body>
+
+?>
+<form action="" method="POST">
+<p>
+	<label for="quantity "> Quantity</label>
+	<input id = "quantity" name ="quantity" required ="required" type="text" placeholder="eg:4">
+</p>
+<p>
+	<label for="mno">Enter your mobile number</label>
+	<input id="mno" type="text" name="mno" required ="required"  placeholder="eg:9876543290">
+</p>
+</form>
+<?php
+print "<td>" ."<a href='confirm.php?q=".$row['id']."'>Confirm</a>". "</td>";
+
+?>  	
+  
+    	
+ </body>
 </html>

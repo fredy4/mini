@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>MSI</title>
 <link rel="stylesheet" type="text/css" href="css/navs.css">
 <link rel="stylesheet" type="text/css" href="css/lgn.css">
 <?php 

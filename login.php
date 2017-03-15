@@ -13,6 +13,7 @@
     	   header("Location: welcomeshp.php");
     	 elseif($_SESSION["log"]==1&&$_SESSION["type"]=="svc")
     	   header("Location: welcomesvc.php");
+            
     	}	
     	?>
     </head>
@@ -21,11 +22,11 @@
      	<h1>Log In</h1>
      	<p>
             <label for="username" data-icon="u" > Your username</label>
-            <input id="username" name="username" required="required" type="text" placeholder="eg:abc@xyz.com"/>
+            <input id="username" name="username" required="required" type="text" placeholder="eg:abc@xyz.com" value="fredybaby9@gmail.com" />
         </p>
         <p> 
             <label for="password" data-icon="p"> Your password </label>
-            <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+            <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" value="elshaddai" /> 
         </p>
          <p class="login button"> 
             <input type="submit" name="submit" value="login" /> 
