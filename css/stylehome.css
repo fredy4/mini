@@ -1,0 +1,31 @@
+
+.contains{
+	float:left;
+	position:relative;
+	border-radius:5px;
+	-webkit-box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	   	-moz-box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	        box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	background:white;
+	font-family:"Trebuchet MS","Myriad Pro",Arial,sans-serif;
+	margin:80px 7%;
+}
+#sbar
+{
+	margin:50px;
+	width:35%;
+ 	float:left;
+ 	position:relative;
+ }
+ #rbar{
+ 	margin:50px;
+ 	width:35%;
+ 	float:right;
+ }
+ .contents{
+ 	float:left;
+ 	font-style:italic;
+ 	margin:2px;
+ 	position:relative;
+ 	width:100%;
+ }
