@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>MSI</title>
-		<link rel="stylesheet" type="text/css" href="css/welc.css">
+	<link rel="stylesheet" type="text/css" href="css/welc.css">
 	<!--<link rel="stylesheet" type="text/css" href="css/demo.css">-->
 	<!--<link rel="stylesheet" type="text/css" href="stylemenu.css">-->
 		<?php 
@@ -22,20 +22,17 @@
 			 header("Location:index.php");
 
 
-	$sql=mysql_connect("localhost","root","root123");
+	$sql=mysql_connect("localhost","root","");
    if(!$sql)
   	  {
 	   die("Couldn't connect".mysql_error());
 	  }
   mysql_select_db("msi",$sql);
-  ?>
-	</head>
+	?>
 	
-
+</head>
 <body style="background-color: lightblue">
-<?php echo "Hi, ".$_SESSION["name"];?>
-<li> <a href="logout.php">Log out</a></li>
-	
+	<?php include("sheader.php"); ?>
 	<!--<div id="content">
 	
 	
@@ -46,9 +43,9 @@
 	</div>
 
 	<?php
-$dbhost = 'localhost:8080';
+$dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = 'root123';
+$dbpass = '';
 $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to mysql');
 
 $dbname = 'msi';
@@ -64,8 +61,6 @@ print "
 <td width=100>Product Type:</td> 
 <td width=100>Cost:</td> 
 <td width=100>Available:</td> 
-
-<td width=100></td>
 </tr>"; 
 
 while($row = mysql_fetch_array($result, MYSQL_ASSOC)) 
@@ -76,15 +71,13 @@ print "<td>" . $row['name'] . "</td>";
 print "<td>" . $row['type'] .  "</td>"; 
 print "<td>" . $row['cost'] . "</td>";
 print "<td>" . $row['no'] . "</td>";
-print "<td>"."<a href='check.php?q=".$row['id']."'>Check Out</a>"."</td>";
-
 
 print "</tr>"; 
 } 
 print "</table>"; 
 ?>
 	<!--<a href="logout.php"><button>logout</button></a>-->
-	
+
 
 </body>
 
