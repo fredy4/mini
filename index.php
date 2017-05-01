@@ -1,14 +1,15 @@
 <?php session_start(); ?>
 
-<html>
+<html style="background:url(css/bgs.jpg) no-repeat center fixed; background-size:cover ">
 <head>
 	
 	
 	<title>MSI</title>
-	<link rel="stylesheet" type="text/css" href="css/demo.css" />
-   <link rel="stylesheet" type="text/css" href="engine1/style.css" />
-   <link rel="stylesheet" type="text/css" href="css/stylehome.css"/>
-   <link rel="stylesheet" type="text/css" href="css/stylemenu.css"/>
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<link rel="stylesheet" type="text/css" href="css/navs.css">
+   <link rel="stylesheet" type="text/css" href="engine1/style.css">
+   <link rel="stylesheet" type="text/css" href="css/stylehome.css">
+   <link rel="stylesheet" type="text/css" href="css/stylemenu.css">
    <script type="text/javascript" src="engine1/jquery.js"></script>
 		<?php 
 		
@@ -30,24 +31,60 @@
 	</head>
 
 	<body>
+   
+	<ul>
+  <li><a href="about.php">About</a></li>
  
- <?php include("iheader.php"); ?>
+ 
+  <li class="dropdown" style="float:right;width:auto">
+    <a href="javascript:void(0)" class="dropbtn">Login</a>
+    <div class="dropdown-content">
+      <a href="loginshp.php">Shop</a>
+      <a href="loginsvc.php">Service Centre</a>
+      <a href="loginco.php">Company</a>
+      <a href="loginc.php">Customer</a>
+    </div>
+   
+    <li class="dropdown" style="float:right;width:auto">
+    <a href="javascript:void(0)" class="dropbtn">Signup</a>
+    <div class="dropdown-content">
+      <a href="sgnshp.php">Shop</a>
+      <a href="sgnsvc.php">Service Centre</a>
+      <a href="sgnco.php">Company</a>
+      <a href="sgnc.php">Customer</a>
+    </div>
+  </li>
+  <li><a href="contact.php">Contact</a></li>
+ 
+</ul>
+ 
+ <!--<div class="topnav" id="myTopnav">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a style="float:right" href="#contact">Contact</a>
+  <a style="float:right;width:auto">Signup</a>
+  <a style="float:right;width:auto">Login</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div> 
+-->
+
+ 
 	<div class="contains">
 	 <!-- Start Slide --> 
 	  <div id="wowslider-container1">
 		<div class="ws_images"><ul>
-			<li><img src="data1/images/1.jpg" alt="1" title="1" id="wows1_0"/></li>
-			<li><img src="data1/images/2.jpg" alt="2" title="2" id="wows1_1"/></li>
-			<li><img src="data1/images/3.jpg" alt="3" title="3" id="wows1_2"/></li>
-			<li><img src="data1/images/10.jpg" alt="10" title="10" id="wows1_3"/></li>
-			<li><img src="data1/images/15.jpg" alt="15" title="15" id="wows1_4"/></li>
+			<li><img src="images/1.jpg" alt="1" title="1" id="wows1_0"/></li>
+			<li><img src="images/2.jpg" alt="2" title="2" id="wows1_1"/></li>
+			<li><img src="images/3.jpg" alt="3" title="3" id="wows1_2"/></li>
+			<li><img src="images/4.jpg" alt="4" title="4" id="wows1_3"/></li>
+			<li><img src="images/5.jpg" alt="5" title="5" id="wows1_4"/></li>
 		</ul></div>
 		<div class="ws_bullets"><div>
 			<a href="#" title="1">1</a>
 			<a href="#" title="2">2</a>
 			<a href="#" title="3">3</a>
-			<a href="#" title="10">4</a>
-			<a href="#" title="15">5</a>
+			<a href="#" title="4">4</a>
+			<a href="#" title="5">5</a>
 	    </div></div>
 	    <span class="wsl"><a href="http://wowslider.com">Slide Show for Website</a> by WOWSlider.com v4.8</span>
 	    <div class="ws_shadow"></div>
@@ -63,7 +100,6 @@
 	      </div>
 	    </div>
 	    </div>
-<?php include("footer.php"); ?>
 </body>
 
 </html>
