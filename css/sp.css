@@ -3,11 +3,12 @@
     font-size: 20px;
     background-color: green;
     color: white;
+    margin: auto;
 }
 body
 { margin-top:100px;
   background-color:linen;
-  background-image:url("/project/images/bgs.jpg");
+  background-image:url("bgs.jpg");
   height: 100%; 
   background-position: center;
   background-repeat: no-repeat;

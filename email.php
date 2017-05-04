@@ -29,13 +29,13 @@ $result = mysql_query($query)
 or die(mysql_error()); 
 
 while($row = mysql_fetch_array($result, MYSQL_ASSOC)) 
-  $ab=$row['pid'];
-{ $date = strtotime("+0 day", strtotime("$row[dop]"));
+  $ab=$row['cid'];
+{ $date = strtotime("+30 day", strtotime("$row[dop]"));
 //echo date("Y-m-d", $date);
 
 $current_datetime = date("Y-m-d", $date);
  //print $current_datetime;
- $date1 = strtotime("+30 day", strtotime("$row[dop]"));
+ $date1 = strtotime("+0 day", strtotime("$row[dop]"));
  $send_date=date("Y-m-d", $date1);
 //
     

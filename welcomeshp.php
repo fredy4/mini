@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html>
+    <html style="background:url(css/bgs.jpg) no-repeat center fixed; background-size:cover">
+
 <head>
 	<title>MSI</title>
 	<?php 
@@ -19,11 +20,11 @@
 
 	$sql=mysql_connect("localhost","root","root123");
    if(!$sql)
-  	  {
-	   die("Couldn't connect".mysql_error());
-	  }
-   mysql_select_db("msi",$sql);
-	?>
+      {
+     die("Couldn't connect".mysql_error());
+    }
+  mysql_select_db("msi",$sql);
+  ?>
 </head>
 <body>
 

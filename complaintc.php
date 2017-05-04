@@ -58,7 +58,7 @@ print "<td>" . $row['product'] . "</td>";
 print "<td>" . $row['typ'] . "</td>"; 
 print "<td>" . $row['brand'] .  "</td>"; 
 print "<td>" . $row['dop'] .  "</td>";
-print "<td>"."<a href='complaint.php?q=".$row['pid']."'>Place Complaint</a>"."</td>";
+print "<td>"."<a href='complaint.php?q=".$row['id']."'>Place Complaint</a>"."</td>";
 print "</tr>"; 
 } 
 

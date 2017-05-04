@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <html style="background:url(css/bgs.jpg) no-repeat center fixed; background-size:cover">
+
 <title>MSI</title>
 </head>
 <body>

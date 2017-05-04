@@ -14,48 +14,43 @@
   ?>
 </head>
 <body>
+
 	<?php 
 		if(isset($_POST["username"])){
 			$id=$_POST["username"];
 			$pwd=$_POST["password"];
 			if(($_POST["submit"])=="register"){
+				
 				$nam=$_POST["name"];
-				$nat=$_POST["nationality"];
 				$stat=$_POST["state"];
-				$dist=$_POST["district"];
+				$di=$_POST["district"];
 				$mno=$_POST["mno"];
 				$add=$_POST["address"];
-				$level=$_POST["level"];
-				$status="inactive";
-				mysql_query("INSERT INTO shop (id, name, password, address, district, state, nationality,mno, level,status) VALUES ('$id', '$nam', '$pwd', '$add', '$dist', '$stat','$nat' ,'$mno', '$level','$status')");
+				mysql_query("INSERT INTO customer (id,name,password,address,state,district,mno) VALUES ('$id','$nam','$pwd','$add','$stat','$di', '$mno')");
 				$_SESSION["log"]=1;
 			    $_SESSION["id"]=$_POST["username"];
-			    $_SESSION["type"]="shp";
-			    $_SESSION["state"]=$_POST["state"];;
+			    $_SESSION["name"]=$_POST["name"];
+			    $_SESSION["state"]=$_POST["state"];
 				$_SESSION["district"]=$_POST["district"];
-				$_SESSION["district"]=$_POST["nationality"];
-			    //$_SESSION["status"]="inactive";	
-			    header("Location:welcomeshp.php");
-			    
-	
-
+			    $_SESSION["type"]="c";
+			    header("Location:welcome.php");
 			}
 
 			elseif ($_POST["submit"]=="login") {
-				$tmp=mysql_fetch_array(mysql_query("SELECT * FROM shop where id = '$id' AND password = '$pwd'"));
+				$tmp=mysql_fetch_array(mysql_query("SELECT * FROM customer where id = '$id' AND password = '$pwd'"));
 				if($tmp){
 					$_SESSION["log"]=1;
-					$_SESSION["type"]="shp";
+					$_SESSION["type"]="c";
 					$_SESSION["id"]=$id;
+					$_SESSION["name"]=$tmp["name"];
 					$_SESSION["state"]=$tmp["state"];
 					$_SESSION["district"]=$tmp["district"];
-					header("Location:welcomeshp.php");
+					header("Location:welcome.php");
 
 				}
 				else{
-					unset($_SESSION["log"]);
-					unset($_SESSION["type"]);
-					header("Location:loginshp.php");
+					$_SESSION["log"]=0;
+		 			header("Location: loginc.php");
 				}
 			}
 

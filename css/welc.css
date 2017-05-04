@@ -1,4 +1,4 @@
-#content{
+/*#content{
 	color:white;
 	background-color:cyan;
 	text-align: center;
@@ -9,8 +9,29 @@
 }
 #do{
 	color:solid-black;  /*this wont change the color of the text bcoz the text is an "href"*/
-	background-color:lightblue;
+/*	background-color:lightblue;
 	padding: 10px;
 	margin:30px;
 }
+*/
+table{
+	align-self: center;
+}
 
+table, td, th {    
+    border: 1px solid black;
+    margin: 200px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+th{
+    background-color: #ffecff;
+  
+}
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+th, td {
+    padding: 15px;
+}

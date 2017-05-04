@@ -1,3 +1,7 @@
+/*form{
+    border: 20px solid #f1f1f1;
+    margin: 80px;
+}*/
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -63,7 +67,7 @@ span.psw {
     position: absolute;
     right: 25px;
     top: 0;
-    color: #000;
+    color: white;
     font-size: 35px;
     font-weight: bold;
 }

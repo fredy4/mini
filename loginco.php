@@ -1,8 +1,10 @@
     <?php session_start(); ?>
     <!DOCTYPE html>
-    <html>
+    <html style="background:url(css/bgs.jpg) no-repeat center fixed; background-size:cover">
+  
     <head>
     	<title>MSI</title>
+        <link rel="stylesheet" type="text/css" href="css/lgnn.css">
     	<?php 
     	if(isset($_SESSION["log"])){
     	 if($_SESSION["log"]==1&&$_SESSION["type"]=="c")
@@ -18,53 +20,19 @@
     </head>
     <body>
      <form action="signupco.php" method="post">
-     	<h1>Log in </h1> <font color="red">
-         <?php
-         if(isset($_SESSION["log"]))
-        if($_SESSION["log"]==0)
-            echo "<p>Previous attempt for login has failed</p>";
-        if(isset($_SESSION["vemail"]))
-        if($_SESSION["vemail"]==1)
-         {
-             echo "<p>password has been sent to the email address </p>";
-             $_SESSION["vemail"]=2;
-          }
-                              
-         ?> </font>
-     	<p>
-            <label for="username" data-icon="u" > Company name</label>
-            <input id="username" name="username" required="required" type="text" placeholder="eg:abc@xyz.com"/>
-        </p>
-        <p> 
-            <label for="password" data-icon="p"> Your password </label>
-            <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
-        </p>
-         <p class="login button"> 
-            <input type="submit" name="submit" value="login" /> 
-    	</p>
-     </form>
-     <form  action="signupco.php" autocomplete="on" method="post"> 
-        <h1> Sign up </h1> 
-        <p> 
-            <label for="username" data-icon="u">Company name</label>
-            <input id="username" name="username" required="required" type="text" placeholder="eg:abc@xyz.com" />
-        </p>
-    	<p>
-    	    <label for="email" data-icon="u">Enter company email id</label>
-    		<input id="email" name="email" required="required" type="text" placeholder="eg:0123456789" />
-    	</p>
+     	
+     	<div class="container">
+            <label for="username" data-icon="u"><b>Company Name</b></label>
+            <input id="username" name="username" required="required" type="text" placeholder="eg:abc@xyz.com"/><br>
+        
+         
+            <label for="password" data-icon="p"><b>Password</b></label>
+            <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO"/><br> 
+        
+            <button type="submit" name="submit" value="login">Login</button><br>
+    
+        </div>
 
-        <p> 
-            <label for="password"  data-icon="p">Your password </label>
-            <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
-        </p>
-        <p> 
-            <label for="passwordsignup_confirm"  data-icon="p">Please confirm your password </label>
-            <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="text" placeholder="eg. X8df!90EO" />
-        </p>
-        <p class="signin button"> 
-    		<input type="submit" name ="submit" value="register"/> 
-    	</p>
     </form>
 
     </body>

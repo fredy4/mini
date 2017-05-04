@@ -10,8 +10,8 @@
   	  {
 	   die("Couldn't connect".mysql_error());
 	  }
-   mysql_select_db("msi",$sql);
-	?>
+  mysql_select_db("msi",$sql);
+  ?>
 </head>
 <body>
 	<?php 
@@ -38,8 +38,9 @@
 
 				}
 				else{
-					$_SESSION["log"]=0;
-		 			header("Location: loginco.php");
+					unset($_SESSION["log"]);
+					unset($_SESSION["type"]);
+					header("Location:loginco.php");
 				}
 			}
 

@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html>
+    <html style="background:url(css/bgs.jpg) no-repeat center fixed; background-size:cover">
+
 <head>
 <title>MSI</title>
 	<?php 
@@ -33,7 +34,7 @@
 	<li> <a href="logout.php">Log out</a></li>
 	<?php
 
-	$query = "SELECT * FROM cart WHERE pid='$_GET[q]'";
+	$query = "SELECT * FROM cart WHERE id='$_GET[q]'";
 $result = mysql_query($query) 
 or die(mysql_error()); 
 while($row = mysql_fetch_array($result, MYSQL_ASSOC)) 
@@ -71,7 +72,7 @@ $dp= $row['dop'] ;
         </p>
 
      <p>
-	<input id="idpk" name="idpk" type="hidden" value="<?php print $row['pid']?>" >
+	<input id="idpk" name="idpk" type="hidden" value="<?php print $row['id']?>" >
 </p>
       <p class="Send button"> 
 <input type="submit" name="submit" value="Send" /> 

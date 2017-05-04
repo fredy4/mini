@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html>
+    <html style="background:url(css/bgs.jpg) no-repeat center fixed; background-size:cover">
+
 <head>
 	<title>MSI</title>
 	<?php 
@@ -29,8 +30,8 @@
 <body>
 <?php echo $_SESSION["company"]." Service Center ";?>
 <?php
- $di=$_SESSION["id"];
-$query = "SELECT * FROM notify where nsc='$di'";
+ $as=$_SESSION["id"];
+$query = "SELECT * FROM notify where nsc='$as'";
 $result = mysql_query($query) 
 or die(mysql_error()); 
 print " 
@@ -49,7 +50,7 @@ print "<td>" . $row['product'] . "</td>";
 print "<td>" . $row['type'] . "</td>"; 
 print "<td>" . $row['brand'] .  "</td>"; 
 print "<td>" . $row['dop'] . "</td>";
-print "<td>" . $row['compl'] . "</td>";
+print "<td>" . $row['comp'] . "</td>";
 //print "<td>"."<a href='work.php?q=".$row['compl_id']."'>Expand</a>"."</td>";
 
 

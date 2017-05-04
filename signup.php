@@ -1,7 +1,8 @@
 <?php session_start(); 
 ?>
 <!DOCTYPE html>
-<html>
+    <html style="background:url(css/bgs.jpg) no-repeat center fixed; background-size:cover">
+
 <head>
 	<title> MSI </title>
    <?php 	
@@ -10,8 +11,9 @@
   	  {
 	   die("Couldn't connect".mysql_error());
 	  }
-   mysql_select_db("msi",$sql);
-	?>
+  mysql_select_db("msi",$sql);
+  ?>
+ 
 </head>
 <body>
 

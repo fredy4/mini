@@ -57,10 +57,10 @@ $ci= $row['cid'];
 }
  $di=$_SESSION["id"];
  
-$temppp=mysql_fetch_array(mysql_query("SELECT * FROM customer where id='$ci'"));
-  $st=$temppp['district'];
+$temp=mysql_fetch_array(mysql_query("SELECT * FROM customer where id='$ci'"));
+  $st=$temp["district"];
   $tempp=mysql_fetch_array(mysql_query("SELECT * FROM srvcntr where district='$st' and company='$di'"));
-  $ns=$tempp['id'];
+  $ns=$tempp["id"];
 
 ?>
 <form action="notify.php" method="GET">
