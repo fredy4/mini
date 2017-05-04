@@ -20,17 +20,25 @@
 			$pwd=$_POST["password"];
 			if(($_POST["submit"])=="register"){
 				$nam=$_POST["name"];
+				$nat=$_POST["nationality"];
 				$stat=$_POST["state"];
-				$city=$_POST["city"];
+				$dist=$_POST["district"];
 				$mno=$_POST["mno"];
 				$add=$_POST["address"];
-				$email=$_POST["email"];
 				$level=$_POST["level"];
-				mysql_query("INSERT INTO shop (id, name, password, address, city, state, mno, email, level) VALUES ('$id', '$nam', '$pwd', '$add', '$city', '$stat', '$mno',  '$email', '$level')");
+				$status="inactive";
+				mysql_query("INSERT INTO shop (id, name, password, address, district, state, nationality,mno, level,status) VALUES ('$id', '$nam', '$pwd', '$add', '$dist', '$stat','$nat' ,'$mno', '$level','$status')");
 				$_SESSION["log"]=1;
 			    $_SESSION["id"]=$_POST["username"];
 			    $_SESSION["type"]="shp";
+			    $_SESSION["state"]=$_POST["state"];;
+				$_SESSION["district"]=$_POST["district"];
+				$_SESSION["nationality"]=$_POST["nationality"];
+			    //$_SESSION["status"]="inactive";	
 			    header("Location:welcomeshp.php");
+			    
+	
+
 			}
 
 			elseif ($_POST["submit"]=="login") {
@@ -39,13 +47,14 @@
 					$_SESSION["log"]=1;
 					$_SESSION["type"]="shp";
 					$_SESSION["id"]=$id;
+					$_SESSION["state"]=$tmp["state"];
+					$_SESSION["district"]=$tmp["district"];
 					header("Location:welcomeshp.php");
 
 				}
 				else{
-					unset($_SESSION["log"]);
-					unset($_SESSION["type"]);
-					header("Location:loginshp.php");
+					$_SESSION["log"]=0;
+		 			header("Location: loginshp.php");
 				}
 			}
 

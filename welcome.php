@@ -34,7 +34,7 @@
 
 <body style="background-color: lightblue">
 <?php echo "Hi, ".$_SESSION["name"];?>
-<li> <a href="logout.php">Log out</a></li>
+<li> <a href="logout.php"><button>Log out</button></a></li>
 	
 	<!--<div id="content">
 	
@@ -83,7 +83,7 @@ print "</tr>";
 } 
 print "</table>"; 
 ?>
-	<!--<a href="logout.php"><button>logout</button></a>-->
+	
 	
 
 </body>

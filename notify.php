@@ -6,8 +6,8 @@
   <?php 
     if(isset($_SESSION["log"])){
     
-     if($_SESSION["log"]==1&&$_SESSION["type"]=="co")
-       header("Location: welcomeco.php");
+     if($_SESSION["log"]==1&&$_SESSION["type"]=="c")
+       header("Location: welcome.php");
      elseif($_SESSION["log"]==1&&$_SESSION["type"]=="shp")
        header("Location: welcomeshp.php");
      elseif($_SESSION["log"]==1&&$_SESSION["type"]=="svc")
@@ -30,7 +30,7 @@
 
 </head>
 <body>
-<?php echo "Hi, ".$_SESSION["name"];?>
+<?php echo $_SESSION["id"];?>
 <li> <a href="logout.php">Log out</a></li>
 
   <?php
@@ -42,27 +42,26 @@ $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to my
 $dbname = 'msi';
 mysql_select_db($dbname);
 $idpc = $_GET['idpk'];
-$query = "SELECT * FROM product WHERE id='$idpc'" ;
+$query = "SELECT * FROM complaint WHERE compl_id='$idpc'" ;
 $result = mysql_query($query) or die(mysql_error()); 
 $row = mysql_fetch_assoc($result); 
 //print_r($row);
  
-      $nam=$_GET["name"];
+      $pr=$_GET["product"];
         $type=$_GET["type"];
-        $company=$_GET["company"];
+        $br=$_GET["brand"];
        //$no=$row["no"];
-        $cost=$_GET["cost"];
-        $qnty=$_GET["quantity"];
-        $dp=$_GET["dop"];
-        $sta=$_SESSION["state"];
-        $dist=$_SESSION["district"];
-        $id=$_SESSION["id"];
-        
-mysql_query("INSERT INTO cart (id,product,typ,brand,amount,quantity,state,district,dop)VALUES('$id','$nam','$type','$company','$cost','$qnty','$sta','$dist','$dp')");
+        $do=$_GET["dop"];
+        $cm=$_GET["comp"];
+        $nsc=$_GET["nsc"];
+
+mysql_query("INSERT INTO notify(product,type,brand,dop,comp,nsc)VALUES('$pr','$type','$br','$do','$cm','$nsc')");
    
          
 
 ?>
-Your order has been successfully placed. we will contact you soon...
+<li> <a href="welcomeco.php"> << </a></li>
+Notification Sent.
+
 </body>
 </html>

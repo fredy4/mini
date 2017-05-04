@@ -38,9 +38,8 @@
 
 				}
 				else{
-					unset($_SESSION["log"]);
-					unset($_SESSION["type"]);
-					header("Location:loginco.php");
+					$_SESSION["log"]=0;
+		 			header("Location: loginco.php");
 				}
 			}
 

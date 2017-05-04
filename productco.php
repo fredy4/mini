@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>MSI</title>
 <?php	
    $sql=mysql_connect("localhost","root","root123");
    if(!$sql)
@@ -19,7 +20,8 @@ if(($_POST["submit"])=="Add"){
 				$comp=$_POST["company"];
 				$no=$_POST["no"];
 				$cost=$_POST["cost"];
-				mysql_query("INSERT INTO product (id,name,type,company,no,cost) VALUES ('$id','$nam','$typ','$comp','$no','$cost')");
+				$det=$_POST["detail"];
+				mysql_query("INSERT INTO product (id,name,type,company,no,cost,detail) VALUES ('$id','$nam','$typ','$comp','$no','$cost','$det')");
 				header("Location:successp.php");
 				
 			}

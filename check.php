@@ -44,39 +44,51 @@ mysql_select_db($dbname);
 $query = "SELECT * FROM product WHERE id='$_GET[q]'";
 $result = mysql_query($query) 
 or die(mysql_error()); 
-print " 
-<table border=\"5\" cellpadding=\"5\" cellspacing=\"0\" style=\"border-collapse: collapse\" bordercolor=\"#808080\" width=\"100&#37;\" id=\"AutoNumber2\" bgcolor=\"cyan\"><tr> 
-<td width=100>Company:</td> 
-<td width=100>Product Name:</td> 
-<td width=100>Product Type:</td> 
-<td width=100>Cost:</td> 
-<td width=100>Available:</td> 
-<td width=100>Description:</td> 
+while($row = mysql_fetch_array($result, MYSQL_ASSOC)) 
+{ 
 
-</tr>"; 
+$co= $row['company'];
+$na= $row['name'];
+$ty= $row['type'] ; 
+$cos= $row['cost'] ;
+$no= $row['no'] ;
+$de= $row['detail'];
+}
 
-$row = mysql_fetch_assoc($result); 
-
-print "<tr>"; 
-print "<td>" . $row['company'] . "</td>"; 
-print "<td>" . $row['name'] . "</td>"; 
-print "<td>" . $row['type'] .  "</td>"; 
-print "<td>" . $row['cost'] . "</td>";
-print "<td>" . $row['no'] . "</td>";
-print "<td>" . $row['detail'] . "</td>";
-print "</tr>"; 
-
-print "</table>"; 
 
 ?>
 <form action="confirm.php" method="GET">
 <p>
-  <label for="quantity "> Quantity</label>
-  <input id = "quantity" name ="quantity" required ="required" type="text" placeholder="eg:4">
+  <label for="company "> Company </label>
+  <input id = "company" name ="company" required ="required" type="text" value="<?php print $co ?>">
 </p>
 <p>
-  <label for="mno">Enter your mobile number</label>
-  <input id="mno" type="text" name="mno" required ="required"  placeholder="eg:9876543290">
+  <label for="name"> Name</label>
+  <input id = "name" name ="name" required ="required" type="text" value="<?php print $na ?>">
+</p>
+<p>
+  <label for="type "> Type</label>
+  <input id = "type" name ="type" required ="required" type="text" value="<?php print $ty ?>">
+</p>
+<p>
+  <label for="cost"> Cost</label>
+  <input id = "cost" name ="cost" required ="required" type="text" value="<?php print $cos ?>">
+</p>
+<p>
+  <label for="no "> Available</label>
+  <input id = "no" name ="no" required ="required" type="text" value="<?php print $no ?>">
+</p>
+<p>
+  <label for="detail"> Description</label>
+  <input id = "detail" name ="detail" required ="required" type="text" value="<?php print $de ?>">
+</p>
+<p>
+  <label for="quantity">Quantity Required</label>
+  <input id="quantity" name="quantity" type="text" required ="required"  placeholder="eg:5">
+      </p>
+      <p>
+  <label for="dop">Date Of Purchase</label>
+  <input id="dop" name="dop" type="text" required ="required"  placeholder="eg:2012-12-31 ">
       </p>
       <p>
 	<input id="idpk" name="idpk" type="hidden" value="<?php print $row['id']?>" >

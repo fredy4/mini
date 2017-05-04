@@ -21,16 +21,17 @@
 			if(($_POST["submit"])=="register"){
 				$stat=$_POST["state"];
 				$com=$_POST["company"];
-				$city=$_POST["city"];
+				$dis=$_POST["dist"];
 				$mno=$_POST["mno"];
 				$add=$_POST["address"];
 				$email=$_POST["email"];
-				echo $stat, $com, $city, $mno, $add, $email,$id,$pwd;
-				mysql_query("INSERT INTO srvcntr (id, password, company, state, city, address, mno, email) VALUES ('$id', '$pwd', '$com', '$stat', '$city', '$add', '$mno',  '$email')");
+				//echo $stat, $com, $city, $mno, $add, $email,$id,$pwd;
+				mysql_query("INSERT INTO srvcntr (id, password, company, state, district, address, mno, email) VALUES ('$id', '$pwd', '$com', '$stat', '$dis', '$add', '$mno',  '$email')");
 				$_SESSION["log"]=1;
 			    $_SESSION["id"]=$_POST["username"];
 			    $_SESSION["type"]="svc";
-			    //header("Location:welcomesvc.php");
+			    $_SESSION["company"]=$_POST["company"];
+			    header("Location:welcomesvc.php");
 			}
 
 			elseif ($_POST["submit"]=="login") {
@@ -39,14 +40,11 @@
 					$_SESSION["log"]=1;
 					$_SESSION["type"]="svc";
 					$_SESSION["id"]=$id;
+					$_SESSION["company"]=$tmp["company"];
 					header("Location:welcomesvc.php");
 
 				}
-				else{
-					unset($_SESSION["log"]);
-					unset($_SESSION["type"]);
-					header("Location:loginsvc.php");
-				}
+				
 			}
 
 		}

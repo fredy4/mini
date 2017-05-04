@@ -13,21 +13,39 @@
     	   header("Location: welcomeshp.php");
     	 elseif($_SESSION["log"]==1&&$_SESSION["type"]=="svc")
     	   header("Location: welcomesvc.php");
-            
+        
     	}	
     	?>
     </head>
     <body>
      <form action="signup.php" method="post">
-     	<h1>Log In</h1>
+     	<h1>Log in </h1> <font color="red">
+         <?php
+         if(isset($_SESSION["log"]))
+        if($_SESSION["log"]==0)
+            echo "<p>Previous attempt for login has failed</p>";
+        if(isset($_SESSION["vemail"]))
+        if($_SESSION["vemail"]==1)
+         {
+             echo "<p>password has been sent to the email address </p>";
+             $_SESSION["vemail"]=2;
+          }
+                              
+         ?> </font>
+        
      	<p>
             <label for="username" data-icon="u" > Your username</label>
-            <input id="username" name="username" required="required" type="text" placeholder="eg:abc@xyz.com" value="fredybaby9@gmail.com" />
+            <input id="username" name="username" required="required" type="text" placeholder="eg:abc@xyz.com"  />
         </p>
         <p> 
             <label for="password" data-icon="p"> Your password </label>
-            <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" value="elshaddai" /> 
+            <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO"  /> 
         </p>
+
+        <p>
+         <a href="resetpw.php">Forgot your password?</a>
+         </p>
+
          <p class="login button"> 
             <input type="submit" name="submit" value="login" /> 
     	</p>
@@ -42,9 +60,9 @@
     		<label for="name" data-icon="u"> Enter your name</label>
     		<input id="name" name="name" required="required" type="text" placeholder="eg:Johny" />
     	<p>
-         <label for="state" data-icon="u"> Enter your State </label>
+         <label for="state" data-icon="u"> Your State </label>
             <select name="state">
-               <option>Select your State</option>
+               <option>....</option>
                 <option>Andra Pradesh</option>
                 <option>Arunachal Pradesh</option>
                 <option>Assam </option>
@@ -75,12 +93,26 @@
                  <option>Uttar Pradesh</option>
                  <option>West Bengal</option>
             </select>
+                    <label for="district" > Your District </label>
+                    <select name="district" value = "alleppy">
+                       <option>...</option>
+                        <option>Alappuzha</option>
+                        <option>Ernakulam</option>
+                        <option>Idukki </option>
+                        <option>Kannur</option>
+                        <option>Kasaragod </option>
+                        <option>Kollam </option>
+                         <option>Kottayam</option>
+                         <option>Kozhikode</option>
+                         <option>Malappuram</option>
+                         <option>Palakkad</option>
+                         <option>Pathanamthitta</option>
+                         <option>Thiruvananthapuram</option>
+                         <option>Thrissur</option>
+                         <option>Wayanad</option>
+                         </select>
         <p>
-            <label for="city" data-icon="u"> Enter your City </label>
-            <input id="city" name="city" required="required" type="text" placeholder="eg:COCHIN"/>
-        </p>
-        <p>
-    		<label for="address" data-icon="u"> Enter your Address </label>
+    		<label for="address" data-icon="u"> Your Address </label>
             <input id="address" name="address" required="required" type="text" placeholder="eg:David villa"/> 
         </p>
          

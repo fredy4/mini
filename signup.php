@@ -23,13 +23,15 @@
 				
 				$nam=$_POST["name"];
 				$stat=$_POST["state"];
-				$city=$_POST["city"];
+				$di=$_POST["district"];
 				$mno=$_POST["mno"];
 				$add=$_POST["address"];
-				mysql_query("INSERT INTO customer (id,name,password,address,state,city,mno) VALUES ('$id','$nam','$pwd','$add','$stat','$city', '$mno')");
+				mysql_query("INSERT INTO customer (id,name,password,address,state,district,mno) VALUES ('$id','$nam','$pwd','$add','$stat','$di', '$mno')");
 				$_SESSION["log"]=1;
 			    $_SESSION["id"]=$_POST["username"];
 			    $_SESSION["name"]=$_POST["name"];
+			    $_SESSION["state"]=$_POST["state"];
+				$_SESSION["district"]=$_POST["district"];
 			    $_SESSION["type"]="c";
 			    header("Location:welcome.php");
 			}
@@ -41,13 +43,14 @@
 					$_SESSION["type"]="c";
 					$_SESSION["id"]=$id;
 					$_SESSION["name"]=$tmp["name"];
+					$_SESSION["state"]=$tmp["state"];
+					$_SESSION["district"]=$tmp["district"];
 					header("Location:welcome.php");
 
 				}
 				else{
-					unset($_SESSION["log"]);
-					unset($_SESSION["type"]);
-					header("Location:login.php");
+					$_SESSION["log"]=0;
+		 			header("Location: login.php");
 				}
 			}
 

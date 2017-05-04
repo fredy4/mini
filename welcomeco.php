@@ -25,14 +25,16 @@
    mysql_select_db("msi",$sql);
 	?>
 </head>
-<body>
-	<?php include("sheader.php"); ?>
+<body>	
+	<?php echo $_SESSION["id"];?>
 	
 	
-            <a href="product.php"><button>Add your Products</button></a>
+	
+            <li><a href="product.php"><button>Add your Products</button></a></li>
+           <li><a href="request.php"><button>View Complaints</button></a></li>
       
 	
-	<!--<a href="logout.php"><button>logout</button></a>-->
+	<a href="logout.php"><button>logout</button></a>
 
 </body>
 

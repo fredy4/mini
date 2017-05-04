@@ -35,6 +35,10 @@
             <label for="cost" > Cost (Rs.)</label>
             <input id="cost" name="cost" required="required" type="text" placeholder="eg:1230" /> 
             </p>
+             <p> 
+            <label for="detail" > Description</label>
+            <input id="detail" name="detail" required="required" type="text" /> 
+            </p>
             <p class="send button"> 
             <input type="submit" name="submit" value="Add" /> 
         </p>

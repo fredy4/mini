@@ -31,15 +31,52 @@
 	<body>
 	<?php echo "Hi, ".$_SESSION["name"];?>
 	<li> <a href="logout.php">Log out</a></li>
-
 	<?php
-	if(($_POST["submit"])=="send"){
-	
-	$cmp=$_POST["cmpl"];
-	mysql_query("INSERT INTO complaint (compl) VALUES ('$cmp')");
-	header("Location:success.php");
-	}
-	?>
+
+	$query = "SELECT * FROM cart WHERE pid='$_GET[q]'";
+$result = mysql_query($query) 
+or die(mysql_error()); 
+while($row = mysql_fetch_array($result, MYSQL_ASSOC)) 
+{ 
+
+$pr= $row['product'];
+$ty= $row['typ'];
+$br= $row['brand'] ;
+$dp= $row['dop'] ; 
+
+}
+
+
+?>
+<form action="compl.php" method="GET">
+<p>
+  <label for="product "> Product </label>
+  <input id = "product" name ="product" required ="required" type="text" value="<?php print $pr ?>">
+</p>
+<p>
+  <label for="typ"> Type</label>
+  <input id = "typ" name ="typ" required ="required" type="text" value="<?php print $ty ?>">
+</p>
+<p>
+  <label for="brand "> Brand</label>
+  <input id = "brand" name ="brand" required ="required" type="text" value="<?php print $br ?>">
+</p>
+<p>
+  <label for="dop "> Date of Purchase</label>
+  <input id = "dop" name ="dop" required ="required" type="text" value="<?php print $dp ?>">
+</p>
+ <p>
+            <label for="cmpl"> Your Complaint</label>
+            <input id="cmpl" textarea name="cmpl" required="required" type="text"/>
+        </p>
+
+     <p>
+	<input id="idpk" name="idpk" type="hidden" value="<?php print $row['pid']?>" >
+</p>
+      <p class="Send button"> 
+<input type="submit" name="submit" value="Send" /> 
+</p>
+</form>
 	</body>
 	</html>
 	

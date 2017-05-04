@@ -8,8 +8,8 @@
     
      if($_SESSION["log"]==1&&$_SESSION["type"]=="co")
        header("Location: welcomeco.php");
-     elseif($_SESSION["log"]==1&&$_SESSION["type"]=="shp")
-       header("Location: welcomeshp.php");
+     elseif($_SESSION["log"]==1&&$_SESSION["type"]=="c")
+       header("Location: welcome.php");
      elseif($_SESSION["log"]==1&&$_SESSION["type"]=="svc")
        header("Location: welcomesvc.php");
      elseif($_SESSION["log"]==0)
@@ -30,7 +30,7 @@
 
 </head>
 <body>
-<?php echo "Hi, ".$_SESSION["name"];?>
+<?php echo "Hi, ".$_SESSION["id"];?>
 <li> <a href="logout.php">Log out</a></li>
 
   <?php
@@ -41,28 +41,32 @@ $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to my
 
 $dbname = 'msi';
 mysql_select_db($dbname);
-$idpc = $_GET['idpk'];
-$query = "SELECT * FROM product WHERE id='$idpc'" ;
+$idpc = $_GET['q'];
+$query = "SELECT * FROM shop WHERE id='$idpc'" ;
 $result = mysql_query($query) or die(mysql_error()); 
 $row = mysql_fetch_assoc($result); 
-//print_r($row);
- 
-      $nam=$_GET["name"];
-        $type=$_GET["type"];
-        $company=$_GET["company"];
-       //$no=$row["no"];
-        $cost=$_GET["cost"];
-        $qnty=$_GET["quantity"];
-        $dp=$_GET["dop"];
-        $sta=$_SESSION["state"];
-        $dist=$_SESSION["district"];
-        $id=$_SESSION["id"];
-        
-mysql_query("INSERT INTO cart (id,product,typ,brand,amount,quantity,state,district,dop)VALUES('$id','$nam','$type','$company','$cost','$qnty','$sta','$dist','$dp')");
-   
-         
+
+$ab=$row['district'];
+$abc=$row['state'];
+//$abcd=$row['nationality'];
+$temppp=mysql_fetch_array(mysql_query("SELECT * FROM shop where level='0'"));
+  $mgm=$temppp['level'];
+   //print "$mgm";
+  $qrry =mysql_fetch_array(mysql_query( "SELECT * FROM state where state='$abc'"));
+    $gm=$qrry['code'];
+    //print "$gm";
+     $querry =mysql_fetch_array(mysql_query( "SELECT * FROM district where district='$ab'"));
+            $mg=$querry['code'];
+            //print "$mg";
+
+            $code=$mgm.$gm.$mg."0";
+            //print "$code";
+
+             mysql_query("UPDATE shop SET level='$code' WHERE id='$idpc'");
+            mysql_query("UPDATE shop SET status='active' WHERE id='$idpc'");
+             header("Location:welcomeshp.php");
 
 ?>
-Your order has been successfully placed. we will contact you soon...
 </body>
 </html>
+
